@@ -3,15 +3,13 @@ package com.zipcodewilmington.person;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by leon on 2/12/18.
- */
+
 public class TestPerson {
     @Test
     public void testDefaultConstructor() {
         // Given
-        String expectedName = "";
-        Integer expectedAge = Integer.MAX_VALUE;
+       String expectedName = " ";
+       Integer expectedAge = Integer.MAX_VALUE ;
 
         // When
         Person person = new Person();
@@ -58,7 +56,7 @@ public class TestPerson {
         String expectedName = "Leon";
 
         // When
-        Person person = new Person(expectedName, expectedAge);
+        Person person = new Person(expectedName,expectedAge);
 
         // Then
         Integer actualAge = person.getAge();
@@ -95,4 +93,74 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testSetRace(){
+        //Given
+        Person person = new Person();
+        String expected = "African American";
+
+        //When
+        person.setRace("African American");
+
+        //Then
+        String actual = person.getRace();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSetHeight(){
+        //Given
+        Person person = new Person();
+        Double expected = 5.7;
+
+        //When
+        person.setHeight(5.7);
+
+        //Then
+        Double actual = person.getHeight();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSetWeight(){
+        //Given
+        Person person = new Person();
+        Double expected = 143.00;
+
+        //When
+        person.setWeight(143.00);
+
+        //Then
+        Double actual = person.getWeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetShoeSize(){
+        //Given
+        Person person = new Person();
+        double expected = 7.5;
+
+        //When
+        person.setShoeSize(7.5);
+
+        //Then
+        double actual = person.getShoeSize();
+        Assert.assertEquals(expected,actual,0.1);
+    }
+
+    @Test
+    public void TestSetSkinType(){
+        //Given
+        Person person = new Person();
+        String expected = "Dry";
+
+        //When
+        person.setSkinType("Dry");
+
+        //Then
+        String actual = person.getSkinType();
+        Assert.assertEquals(expected, actual);
+    }
+
+
 }
